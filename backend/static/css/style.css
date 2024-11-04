@@ -1,0 +1,86 @@
+/* 这里可以放置您的CSS样式 */
+
+
+/* copy自HTML脚本 */
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6ffe6; /* 浅绿色背景 */
+    padding: 20px;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    background-color: #f2fff2; /* 更浅的绿色 */
+    padding: 20px;
+    border-radius: 5px;
+}
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.input-group label {
+    margin-bottom: 5px;
+    font-weight: bold; /* 提示词加粗 */
+}
+.input-group .indented {
+    padding-left: 20px; /* 内容缩进 */
+}
+.input-group textarea,
+.input-group input[type="file"],
+.input-group .analyze-button {
+    width: calc(100% - 20px); /* 减去缩进的宽度 */
+    margin-left: 20px; /* 与提示词对齐 */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.input-group textarea {
+    resize: vertical;
+}
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 20px; /* 与提示词对齐 */
+}
+.checkbox-group label {
+    flex-basis: 20%;
+    margin-right: 10px;
+    font-weight: normal; /* 选项此正常字体 */
+}
+.checkbox-group .other-input {
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+}
+.checkbox-group .other-input input[type="text"] {
+    flex-grow: 1;
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.input-group .analyze-button {
+    width: auto; /* 按钮宽度自适应内容 */
+    padding: 5px 10px; /* 按钮内边距 */
+}
+.input-group input[type="submit"] {
+    background-color: #4CAF50; /* 深绿色按钮 */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.input-group input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.result {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #ddffdd; /* 结果显示区域的浅绿色 */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

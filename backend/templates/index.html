@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>岗位-简历匹配分析</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container">
+  <form id="resume-matching-form">
+    <div class="input-group">
+      <label for="job-name">岗位名称：</label>
+      <textarea id="job-name" name="job_name" rows="1" class="indented" required></textarea>
+    </div>
+    <div class="input-group">
+      <label for="job-description">岗位要求：</label>
+      <textarea id="job-description" name="job_description" rows="6" class="indented" required></textarea>
+    </div>
+    <div class="input-group">
+      <label for="resume-file">上传简历：</label>
+      <input type="file" id="resume-file" name="resume_file" class="indented" required>
+    </div>
+    <div class="input-group">
+      <label>评估维度：</label>
+      <div class="checkbox-group 1">
+        <input type="checkbox" id="education" name="criteria" value="education">
+        <label for="education">教育背景</label>
+        <input type="checkbox" id="language" name="criteria" value="language">
+        <label for="language">语言水平</label>
+        <input type="checkbox" id="research-field" name="criteria" value="research_field">
+        <label for="research-field">研究领域</label>
+        <input type="checkbox" id="publication" name="criteria" value="publication">
+        <label for="publication">论文发表</label>
+      </div>
+      <div class="checkbox-group 2">
+        <input type="checkbox" id="work-experience" name="criteria" value="work_experience">
+        <label for="work-experience">工作和项目经历</label>
+        <input type="checkbox" id="skills" name="criteria" value="skills">
+        <label for="skills">工作技能及证书</label>
+        <input type="checkbox" id="personality" name="criteria" value="personality">
+        <label for="personality">个性品质</label>
+      </div>
+      <div class="checkbox-group other_details">
+        <label for="other">  其他维度</label>
+        <input type="text" name="other_details" class="indented">
+      </div>
+    </div>
+    <div class="input-group">
+      <label for="additional-info">其它内容：</label>
+      <textarea id="additional-info" name="additional_info" rows="4" class="indented"></textarea>
+    </div>
+    <div class="input-group">
+      <input type="button" value="分析" id="analyze-button" class="analyze-button">
+    </div>
+  </form>
+  <div class="result" id="analysis-result">
+    <!-- 分析结果将显示在这里 -->
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+
+</body>
+</html>
