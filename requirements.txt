@@ -1,0 +1,7 @@
+flask
+PyPDF2
+python-docx
+
+## either depending on your account
+openai
+langchain
