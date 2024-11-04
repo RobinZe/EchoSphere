@@ -70,11 +70,7 @@ def completion_batch(job_name, jd_text, resume_path, crit_dims, addinfo):
     return all_rst
 
 
-'''
-def evaluate_resume(jd_name, jd_text, crit, other_details, rsm_path, addit=None):
-    tt = pdf2text(rsm_path)
-    return tt
-'''
+
 def jd_cv_jdf(jd_name, jd_text, crit, other_details, rsm_path, addit=None):
     crit.extend(re.split('[ ]|[\t]|[、]|[,]|[，]|[.]|[。]|[;]|[；]|[_]', other_details))
     if len(addit) < 4:
