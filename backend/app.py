@@ -12,6 +12,11 @@ app = Flask(__name__)
 CORS(app)  # 允许所有来源的跨域请求
 
 
+STORAGE_PATH = 'storage'
+if not os.path.exists(STORAGE_PATH):
+    os.makedirs(STORAGE_PATH)
+
+
 # 设置后台定时任务
 scheduler = BackgroundScheduler(timezone=pytz.timezone("Asia/Shanghai"))
 scheduler.add_job(func=monitor_memory, trigger="interval", seconds=180)
@@ -34,7 +39,7 @@ def analyze():
 
     resume_file = request.files['resume_file']
     # resume_files = request.files.getlist('file_name')
-    resume_file_path = os.path.join('../storage', resume_file.filename)
+    resume_file_path = os.path.join(STORAGE_PATH, resume_file.filename)
     resume_file.save(resume_file_path)
 
     # 调用analysis.py中的jd_cv_jdf函数
@@ -63,7 +68,7 @@ def process():
         additional_info = request.form['AdditionalInfo']
 
         resume_file = request.files['resumeFile']
-        resume_file_path = os.path.join('../storage', resume_file.filename)
+        resume_file_path = os.path.join(STORAGE_PATH, resume_file.filename)
         resume_file.save(resume_file_path)
 
         result = jd_cv_jdf(job_name, job_description, criteria, other_details, resume_file_path, additional_info)
